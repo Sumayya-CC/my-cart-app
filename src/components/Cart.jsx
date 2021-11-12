@@ -9,13 +9,12 @@ class Cart extends Component {
         this.state = {
             name: "",
             items: [
-                { name: "Bottle", price: 60 },
-                { name: "Pen", price: 5 },
-                { name: "Book", price: 20 },
-                { name: "Bag", price: 500 },
-                { name: "Umbrella", price: 400 },
+                { name: "Bottle", price: 60, count: 0 },
+                { name: "Pen", price: 5, count: 0 },
+                { name: "Book", price: 20, count: 0 },
+                { name: "Bag", price: 500, count: 0 },
+                { name: "Umbrella", price: 400, count: 0 },
             ],
-            counts: [0, 0, 0, 0, 0],
             total: 0
         }
     }
@@ -24,14 +23,14 @@ class Cart extends Component {
     }
     setCount = (index, count) => {
         this.setState({
-            counts: this.state.counts.map((c, i) => {
-                return index !== i ? c : count;
+            items: this.state.items.map((item, i) => {
+                return index !== i ? item : { ...item, count: count }
             })
-        }, () => this.totalPrice());
+        }, () => { this.totalPrice() });
     }
     totalPrice = () => {
         let total = 0;
-        this.state.items.map((item, i) => total += item.price * this.state.counts[i]);
+        this.state.items.map((item, i) => total += item.price * item.count);
         this.setState({ total: total });
     }
     render() {
@@ -42,7 +41,7 @@ class Cart extends Component {
                     <h1>{this.state.name}'s Cart</h1>
                     {this.state.items.map((item, i) => {
                         return <Card key={i} item={item} index={i}
-                            count={this.state.counts[i]} setCount={this.setCount} />
+                            setCount={this.setCount} />
                     })}
                     <h2>Total: ₹{this.state.total}</h2>
                 </div>}
