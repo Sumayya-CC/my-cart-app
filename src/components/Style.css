@@ -1,0 +1,87 @@
+.center {
+    text-align: center;
+}
+.row {
+    justify-content: center !important;
+    display: flex;
+}
+
+.click {
+    cursor: pointer;
+}
+.click:hover {
+    opacity: 0.8;
+}
+
+.input {
+    margin: 20px;
+    width: 10%;
+    min-height: 40px;
+    font-size: 20px;
+}
+.btn {
+    margin: 20px;
+    width: 7%;
+    min-height: 40px;
+    font-size: 20px;
+    background-color: lightcoral;
+}
+
+.box {
+    margin: 20px;
+    width: 15%;
+    min-height: 40px;
+    background-color: lightseagreen;
+}
+.icon {
+    font-size: larger;
+    color: rgb(55, 160, 154);
+}
+.price {
+    text-align: center;
+    font-size: 22px;
+    margin: 10px;
+}
+
+.M10 {
+    margin: 10px;
+}
+.M20 {
+    margin: 20px;
+}
+.M30 {
+    margin: 30px;
+}
+.MT10 {
+    margin-top: 10px;
+}
+.MT20 {
+    margin-top: 20px;
+}
+.MT30 {
+    margin-top: 30px;
+}
+.MLR10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.MLR20 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.MLR30 {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.MTB10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.MTB20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.MTB30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
